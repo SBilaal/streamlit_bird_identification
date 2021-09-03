@@ -1,1 +1,5 @@
-streamlit, PIL, tensorflow, numpy, os
+streamlit
+PIL
+tensorflow
+numpy
+os
