@@ -16,7 +16,8 @@ classes = ['AFRICAN FIREFINCH', 'CROWNED PIGEON', 'GREEN JAY', 'MOURNING DOVE', 
 os.path.isdir(test_path)
 root = 'D:\\MTE 500\Project\\Birds_Test_Dataset'
 
-model1 = keras.models.load_model(f'{root}\\models\\trial7_model.h5' )
+model1 = keras.models.load_model(f'{root}\\app\\trial7_model.h5')
+model2 = keras.models.load_model('app/trial7_model.h5')
 
 def preprocess_image(img):
   IMAGE_SHAPE = (299, 299,3)
@@ -29,6 +30,6 @@ def preprocess_image(img):
 # img = preprocess_image(f'{root}\\{test_path}\\{classes[7]}\\4.jpg')
 
 def predict_bird(img):
-  prediction = model1.predict(img, verbose=2)
+  prediction = model2.predict(img, verbose=2)
   pred = np.argmax(prediction)
   return classes[pred]
