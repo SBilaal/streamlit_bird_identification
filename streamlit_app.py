@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image, ImageOps
+import numpy as np
 from model import classes, preprocess_image, predict_bird
 
 
@@ -17,7 +18,7 @@ st.write(" ")
 uploaded_image = st.file_uploader(f'Upload an image of one of the above listed birds', type=['png', 'jpg', 'jfif', 'jpeg'])
 if uploaded_image is not None:
     image = Image.open(uploaded_image)
-    
+
     #Checks if channel is 4 and converts to 3.
     image_array = np.array(image)
     channel = image_array.shape[-1]
