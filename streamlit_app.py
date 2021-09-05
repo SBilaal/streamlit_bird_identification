@@ -22,7 +22,7 @@ if uploaded_image is not None:
     #Checks if channel is 4 and converts to 3.
     image_array = np.array(image)
     channel = image_array.shape[-1]
-    if channels == 4:
+    if channel == 4:
         img = img.convert('RGBA')
         background = Image.new('RGBA', img.size, (255,255,255))
         image = Image.alpha_composite(background, img).convert('RGB')
