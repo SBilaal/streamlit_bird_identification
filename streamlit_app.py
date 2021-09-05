@@ -17,6 +17,15 @@ st.write(" ")
 uploaded_image = st.file_uploader(f'Upload an image of one of the above listed birds', type=['png', 'jpg', 'jfif', 'jpeg'])
 if uploaded_image is not None:
     image = Image.open(uploaded_image)
+    
+    #Checks if channel is 4 and converts to 3.
+    image_array = np.array(image)
+    channel = image_array.shape[-1]
+    if channels == 4:
+        img = img.convert('RGBA')
+        background = Image.new('RGBA', img.size, (255,255,255))
+        image = Image.alpha_composite(background, img).convert('RGB')
+
     st.image(image, caption='Uploaded Bird Image.', use_column_width=False)
     st.write("")
     st.write("Identifying...")
