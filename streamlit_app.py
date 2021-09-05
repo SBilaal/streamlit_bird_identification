@@ -12,7 +12,7 @@ birds = ''
 for bird in classes:
     birds += f'{bird.capitalize()}, '
 
-st.markdown(f"The grain-eating birds picked to be identified by the model are: {birds[:-2]}.")
+st.markdown(f"The grain-eating birds selected for identification are: {birds[:-2]}.")
 
 st.write(" ")
 uploaded_image = st.file_uploader(f'Upload an image of one of the above listed birds', type=['png', 'jpg', 'jfif', 'jpeg'])
