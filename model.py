@@ -36,7 +36,9 @@ def build_model():
 # model2 = keras.models.load_model('app/trial7_model.h5')
 
 model = build_model()
+model1 = build_model()
 model.load_weights(model_path1)
+model1.load_weights('trial7_model.h5')
 
 def preprocess_image(img):
   IMAGE_SHAPE = (299, 299,3)
