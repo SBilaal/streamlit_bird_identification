@@ -14,7 +14,7 @@ for bird in classes:
 st.markdown(f"The grain-eating birds picked to be identified by the model are: {birds[:-2]}.")
 
 st.write(" ")
-uploaded_image = st.file_uploader(f'Upload an image of one of the above listed birds', type='jpg')
+uploaded_image = st.file_uploader(f'Upload an image of one of the above listed birds', type=['png', 'jpg', 'jfif', 'jpeg'])
 if uploaded_image is not None:
     image = Image.open(uploaded_image)
     st.image(image, caption='Uploaded Bird Image.', use_column_width=False)
