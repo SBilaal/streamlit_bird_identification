@@ -35,9 +35,9 @@ def build_model():
 # model1 = keras.models.load_model(model_path1)
 # model2 = keras.models.load_model('app/trial7_model.h5')
 
-model = build_model()
+# model = build_model()
 model1 = build_model()
-model.load_weights(model_path1)
+# model.load_weights(model_path1)
 model1.load_weights('trial7_model.h5')
 
 def preprocess_image(img):
@@ -50,6 +50,6 @@ def preprocess_image(img):
 
 
 def predict_bird(img):
-  prediction = model.predict(img, verbose=2)
+  prediction = model1.predict(img, verbose=2)
   pred = np.argmax(prediction)
   return classes[pred]
